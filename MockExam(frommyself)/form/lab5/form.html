@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with LocalStorage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 97%;
+        }
+        select {
+            width: 100%;
+        }
+        input, select, textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .output {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Form Validation with LocalStorage</h1>
+<form id="registrationForm">
+    <label for="idCard">หมายเลขบัตรประชาชน:</label>
+    <input type="text" id="idCard" name="idCard" maxlength="13">
+    <span class="error" id="idCardError"></span>
+
+    <label for="title">คำนำหน้านาม:</label>
+    <select id="title" name="title">
+        <option value="">-- เลือกคำนำหน้านาม --</option>
+        <option value="นาย">นาย</option>
+        <option value="นาง">นาง</option>
+        <option value="นางสาว">นางสาว</option>
+        <option value="เด็กชาย">เด็กชาย</option>
+        <option value="เด็กหญิง">เด็กหญิง</option>
+    </select>
+    <span class="error" id="titleError"></span>
+
+    <label for="firstName">ชื่อ:</label>
+    <input type="text" id="firstName" name="firstName">
+    <span class="error" id="firstNameError"></span>
+
+    <label for="lastName">นามสกุล:</label>
+    <input type="text" id="lastName" name="lastName">
+    <span class="error" id="lastNameError"></span>
+
+    <label for="address">ที่อยู่:</label>
+    <textarea id="address" name="address"></textarea>
+    <span class="error" id="addressError"></span>
+
+    <label for="subdistrict">ตำบล/แขวง:</label>
+    <input type="text" id="subdistrict" name="subdistrict">
+    <span class="error" id="subdistrictError"></span>
+
+    <label for="district">อำเภอ/เขต:</label>
+    <input type="text" id="district" name="district">
+    <span class="error" id="districtError"></span>
+
+    <label for="province">จังหวัด:</label>
+    <select id="province" name="province">
+        <option value="">-- เลือกจังหวัด --</option>
+        <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+        <option value="เชียงใหม่">เชียงใหม่</option>
+        <option value="ภูเก็ต">ภูเก็ต</option>
+        <!-- เพิ่มรายชื่อจังหวัดที่นี่ -->
+    </select>
+    <span class="error" id="provinceError"></span>
+
+    <label for="postalCode">รหัสไปรษณีย์:</label>
+    <input type="text" id="postalCode" name="postalCode" maxlength="5">
+    <span class="error" id="postalCodeError"></span>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+</form>
+
+<div class="output" id="output"></div>
+
+<script>
+    function validateForm() {
+        let isValid = true;
+
+        document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+        // Validate ID Card
+        const idCard = document.getElementById('idCard').value;
+        if (!/^\d{13}$/.test(idCard)) {
+            document.getElementById('idCardError').textContent = 'หมายเลขบัตรประชาชนต้องเป็นตัวเลข 13 หลัก';
+            isValid = false;
+        }
+
+        // Validate Title
+        const title = document.getElementById('title').value;
+        if (!title) {
+            document.getElementById('titleError').textContent = 'กรุณาเลือกคำนำหน้านาม';
+            isValid = false;
+        }
+
+        // Validate First Name
+        const firstName = document.getElementById('firstName').value;
+        if (!/^[a-zA-Zก-ฮ]{2,20}$/.test(firstName)) {
+            document.getElementById('firstNameError').textContent = 'ชื่อต้องเป็นตัวอักษร ความยาวระหว่าง 2-20 ตัวอักษร';
+            isValid = false;
+        }
+
+        // Validate Last Name
+        const lastName = document.getElementById('lastName').value;
+        if (!/^[a-zA-Zก-ฮ]{2,30}$/.test(lastName)) {
+            document.getElementById('lastNameError').textContent = 'นามสกุลต้องเป็นตัวอักษร ความยาวระหว่าง 2-30 ตัวอักษร';
+            isValid = false;
+        }
+
+        // Validate Address
+        const address = document.getElementById('address').value;
+        if (address.length < 15) {
+            document.getElementById('addressError').textContent = 'ที่อยู่ต้องมีความยาวไม่ต่ำกว่า 15 ตัวอักษร';
+            isValid = false;
+        }
+
+        // Validate Subdistrict
+        const subdistrict = document.getElementById('subdistrict').value;
+        if (!/^[a-zA-Zก-๙]{2,}$/.test(subdistrict)) {
+            document.getElementById('subdistrictError').textContent = 'ตำบล/แขวงต้องเป็นตัวอักษร ความยาวไม่ต่ำกว่า 2 ตัวอักษร';
+            isValid = false;
+        }
+
+        // Validate District
+        const district = document.getElementById('district').value;
+        if (!/^[a-zA-Zก-๙]{2,}$/.test(district)) {
+            document.getElementById('districtError').textContent = 'อำเภอ/เขตต้องเป็นตัวอักษร ความยาวไม่ต่ำกว่า 2 ตัวอักษร';
+            isValid = false;
+        }
+
+        // Validate Province
+        const province = document.getElementById('province').value;
+        if (!province) {
+            document.getElementById('provinceError').textContent = 'กรุณาเลือกจังหวัด';
+            isValid = false;
+        }
+
+        // Validate Postal Code
+        const postalCode = document.getElementById('postalCode').value;
+        if (!/^\d{5}$/.test(postalCode)) {
+            document.getElementById('postalCodeError').textContent = 'รหัสไปรษณีย์ต้องเป็นตัวเลข 5 หลัก';
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Save data to LocalStorage
+            const formData = {
+                idCard,
+                title,
+                firstName,
+                lastName,
+                address,
+                subdistrict,
+                district,
+                province,
+                postalCode
+            };
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            displayData();
+            alert('ข้อมูลถูกต้องและบันทึกใน LocalStorage แล้ว');
+        }
+    }
+
+    function displayData() {
+        const data = JSON.parse(localStorage.getItem('formData'));
+        const output = document.getElementById('output');
+        if (data) {
+            output.innerHTML = `
+                <h2>ข้อมูลที่บันทึกไว้:</h2>
+                <p><strong>หมายเลขบัตรประชาชน:</strong> ${data.idCard}</p>
+                <p><strong>คำนำหน้านาม:</strong> ${data.title}</p>
+                <p><strong>ชื่อ:</strong> ${data.firstName}</p>
+                <p><strong>นามสกุล:</strong> ${data.lastName}</p>
+                <p><strong>ที่อยู่:</strong> ${data.address}</p>
+                <p><strong>ตำบล/แขวง:</strong> ${data.subdistrict}</p>
+                <p><strong>อำเภอ/เขต:</strong> ${data.district}</p>
+                <p><strong>จังหวัด:</strong> ${data.province}</p>
+                <p><strong>รหัสไปรษณีย์:</strong> ${data.postalCode}</p>
+            `;
+        } else {
+            output.innerHTML = '<p>ไม่มีข้อมูลที่บันทึกไว้</p>';
+        }
+    }
+
+    // Display data on page load
+    document.addEventListener('DOMContentLoaded', displayData);
+</script>
+
+</body>
+</html>

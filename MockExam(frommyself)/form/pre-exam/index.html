@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nobel</title>
+  </head>
+  <body>
+    <h1>Nobel</h1>
+    <div id="test"></div>
+
+    <script>
+      function test_func(data) {
+        let outputpage = "";
+
+        data.forEach((prize) => {
+          prize.laureates.forEach((laureate) => {
+            outputpage += `
+            <p>
+                ${laureate.id}) ${laureate.firstname} ${laureate.surname} (${prize.year}), ${prize.category}, ${laureate.motivation}
+            </p>
+        `;
+          });
+        });
+
+        document.getElementById("test").innerHTML = outputpage;
+      }
+      fetch("nobleprize.json")
+        .then((response) => response.json())
+        .then((data) => test_func(data))
+        .catch((error) => console.log("error", error));
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nobel Prize Winners</title>
+  </head>
+  <body>
+    <h1>Nobel Prize Winners</h1>
+    <div id="test"></div>
+
+    <script>
+      function test_func(data) {
+        let outputpage = "";
+
+        for (prize of data) {
+          const category = prize.category;
+          const year = prize.year;
+
+          for (laureate of prize.laureates) {
+            outputpage += `
+              <p>
+                ${laureate.id}) ${laureate.firstname} ${laureate.surname || "N/A"}
+                (${year}), ${category}, 
+              </p>
+            `;
+          }
+        }
+
+        document.getElementById("test").innerHTML = outputpage; // แสดงผลในหน้า HTML
+      }
+
+      // โหลดข้อมูล JSON
+      fetch("nobleprize.json")
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+          return response.json();
+        })
+        .then((data) => test_func(data)) // ส่งข้อมูลไปยังฟังก์ชัน test_func
+        .catch((error) => console.log("Error:", error)); // จัดการข้อผิดพลาด
+    </script>
+  </body>
+</html> -->
+
