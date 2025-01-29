@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .box {
+        width: 50%;
+      }
+
+      .score-container {
+        background-color: white;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .score-header {
+        display: grid;
+        grid-template-columns: 5% 32% 63%;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 20px;
+        justify-items: center;
+      }
+
+      .score-bar {
+        display: grid;
+        grid-template-columns: 15% 30% 55%;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .score-bar .bar {
+        background-color: #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 2em;
+      }
+
+      .bar-fill {
+        height: 100%;
+        text-align: right;
+        line-height: 2.5em;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8em;
+        padding-right: 10px;
+      }
+
+      .bar-fill1 { background-color: #ff6f61; width: 80%; }
+      .bar-fill2 { background-color: #6ab04c; width: 60%; }
+      .bar-fill3 { background-color: #2980b9; width: 90%; }
+      .bar-fill4 { background-color: #f39c12; width: 50%; }
+      .bar-fill5 { background-color: #9b59b6; width: 70%; }
+
+      #order {
+        margin-left: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Student Scores</h1>
+      <div class="score-container">
+
+      <!-- Header -->
+        <div class="score-header">
+          <div>ID</div>
+          <div>Name</div>
+          <div>Score</div>
+        </div>
+
+        <!-- Score Rows -->
+        <div class="score-bar">
+          <div id="order">1</div>
+          <div>Nancy Freehafer</div>
+          <div class="bar">
+            <div class="bar-fill bar-fill1">80%</div>
+          </div>
+        </div>
+
+        <div class="score-bar">
+          <div id="order">2</div>
+          <div>Andrew Cencini</div>
+          <div class="bar">
+            <div class="bar-fill bar-fill2">60%</div>
+          </div>
+        </div>
+
+        <div class="score-bar">
+          <div id="order">3</div>
+          <div>Jan Kotes</div>
+          <div class="bar">
+            <div class="bar-fill bar-fill3">90%</div>
+          </div>
+        </div>
+
+        <div class="score-bar">
+          <div id="order">4</div>
+          <div>Mariya Sergienko</div>
+          <div class="bar">
+            <div class="bar-fill bar-fill4">50%</div>
+          </div>
+        </div>
+
+        <div class="score-bar">
+          <div id="order">5</div>
+          <div>Steven T</div>
+          <div class="bar">
+            <div class="bar-fill bar-fill5">70%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

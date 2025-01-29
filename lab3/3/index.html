@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab3/3</title>
+</head>
+<style>
+    .box {
+        justify-items: center;
+    }
+
+    .container {
+        width: 20%;
+        background-color: rgb(239, 239, 239);
+        box-shadow: 2rem;
+        padding: 2rem;
+        border-radius: 10%;
+        box-shadow: 5px 5px 10px rgb(193, 193, 193);
+    }
+
+    #cr1,
+    #cr2,
+    #cr3,
+    #cr4,
+    #cr5 {
+        width: 6rem;
+        padding: 1rem;
+        background-color: rgb(162, 208, 233);
+        color: darkblue;
+        margin-bottom: 0.5rem;
+        transition: 1s;
+    }
+
+    button {
+        margin-top: 1rem;
+        padding: 0.5em 1em;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="math" id="cr1">
+                Math
+            </div>
+            <div class="thai" id="cr2">
+                Thai
+            </div>
+            <div class="eng" id="cr3">
+                English
+            </div>
+            <div class="sci" id="cr4">
+                Science
+            </div>
+            <div class="social" id="cr5">
+                Social
+            </div>
+            <button onclick="clickChart()">View Chart</button>
+        </div>
+    </div>
+    <script>
+        var x = true;
+
+        function clickChart() {
+            if (x == true) {
+                document.getElementById('cr1').style.width = "8rem";
+                document.getElementById('cr1').style.backgroundColor = "black";
+                document.getElementById('cr1').style.color = "white";
+
+                document.getElementById('cr2').style.width = "17rem";
+                document.getElementById('cr2').style.backgroundColor = "orange";
+                document.getElementById('cr2').style.color = "white";
+
+                document.getElementById('cr3').style.width = "12rem";
+                document.getElementById('cr3').style.backgroundColor = "blue";
+                document.getElementById('cr3').style.color = "white";
+
+                document.getElementById('cr4').style.width = "15rem";
+                document.getElementById('cr4').style.backgroundColor = "green";
+                document.getElementById('cr4').style.color = "white";
+
+                document.getElementById('cr5').style.width = "10rem";
+                document.getElementById('cr5').style.backgroundColor = "pink";
+                document.getElementById('cr5').style.color = "white";
+                x = false;
+            } else {
+                document.getElementById('cr1').style.width = "6rem";
+                document.getElementById('cr1').style.backgroundColor = "rgb(162, 208, 233)";
+                document.getElementById('cr1').style.color = "darkblue";
+
+                document.getElementById('cr2').style.width = "6rem";
+                document.getElementById('cr2').style.backgroundColor = "rgb(162, 208, 233)";
+                document.getElementById('cr2').style.color = "darkblue";
+
+                document.getElementById('cr3').style.width = "6rem";
+                document.getElementById('cr3').style.backgroundColor = "rgb(162, 208, 233)";
+                document.getElementById('cr3').style.color = "darkblue";
+
+                document.getElementById('cr4').style.width = "6rem";
+                document.getElementById('cr4').style.backgroundColor = "rgb(162, 208, 233)";
+                document.getElementById('cr4').style.color = "darkblue";
+
+                document.getElementById('cr5').style.width = "6rem";
+                document.getElementById('cr5').style.backgroundColor = "rgb(162, 208, 233)";
+                document.getElementById('cr5').style.color = "darkblue";
+                x = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

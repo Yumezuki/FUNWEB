@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3/2</title>
+    <style>
+        body {
+            text-align: center;
+            justify-items: center;
+            margin-top: 18%;
+        }
+        .numbers {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem;
+        }
+        .number {
+            width: 10rem;
+            height: 10rem;
+            background-size: cover;
+            background-position: center;
+        }
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            background-color: rgb(60, 60, 60);
+            color: white;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="numbers">
+        <img id="num1" class="number" src="img/0.png">
+        <img id="num2" class="number" src="img/0.png">
+        <img id="num3" class="number" src="img/0.png">
+        <img id="num4" class="number" src="img/0.png">
+        <img id="num5" class="number" src="img/0.png">
+        <img id="num6" class="number" src="img/0.png">
+    </div>
+
+    <button onclick="update()">สร้าง</button>
+
+    <script>
+        const images = [
+            'img/1.png',
+            'img/2.png',
+            'img/3.png',
+            'img/4.png',
+            'img/5.png',
+            'img/6.png',
+            'img/7.png',
+            'img/8.png',
+            'img/9.png',
+            'img/0.png'
+        ];
+
+        function getrandomimg() {
+            const randomindex = Math.floor(Math.random() * images.length);
+            return images[randomindex];
+        }
+
+        function update() {
+            for (let i = 1; i <= 6; i++) {
+                const randomimg = getrandomimg();
+                const num = document.getElementById(`num${i}`);
+                num.src = randomimg; 
+            }
+        }
+    </script>
+
+</body>
+</html>

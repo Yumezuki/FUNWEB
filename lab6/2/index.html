@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6/2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 2rem;
+            padding: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 5px;
+            text-align: center;
+            width: fit-content;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 20rem;
+            height: 15rem;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            margin: 0;
+            padding: 2rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cats</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://static.wixstatic.com/media/fed1b6_9441dea446a1450498d307ea7060e116~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/fed1b6_9441dea446a1450498d307ea7060e116~mv2.jpg" alt="Maine coon">
+            <p>Maine coon</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://meowbarn.com/wp-content/uploads/2022/02/shutterstock_515476243.jpg" alt="Ragdoll">
+            <p>Ragdoll</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://media.istockphoto.com/id/1356569858/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%82%E0%B8%9F%E0%B8%81%E0%B8%B1%E0%B8%AA%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%81-%E0%B9%81%E0%B8%A1%E0%B8%A7%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%81-sphynx-%E0%B9%82%E0%B8%84%E0%B8%A5%E0%B8%AA%E0%B8%AD%E0%B8%B1%E0%B8%9E%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%B1%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88.jpg?s=612x612&w=0&k=20&c=d2v5hl96yL0nAqnMJEmcB9z2Y_O6bjysaJiUlYA-NAM=" alt="Sphynx">
+            <p>Sphynx</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.purina.co.th/sites/default/files/styles/ttt_image_510/public/2024-02/Content_Breed_Birman_690%E2%80%8A%C3%97%E2%80%8A390-1.jpg?itok=823P1Ejd" alt="Birman">
+            <p>Birman</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.cathousecattery.com/cathousenew/1.JPG" alt="American Shorthair">
+            <p>American Shorthair</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://assets.elanco.com/8e0bf1c2-1ae4-001f-9257-f2be3c683fb1/fca42f04-2474-4302-a238-990c8aebfe8c/Siamese_cat_1110x740.jpg" alt="Siamese">
+            <p>Siamese</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.purina.co.th/sites/default/files/styles/ttt_image_510/public/2021-01/Scottish%20Fold.2.jpg?itok=1LUhD8ze" alt="Scottish Fold">
+            <p>Scottish Fold</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://meowbarn.com/wp-content/uploads/2022/02/shutterstock_1844994037.jpg" alt="Persian">
+            <p>Persian</p>
+        </div>
+    </div>
+</body>
+</html>

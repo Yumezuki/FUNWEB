@@ -1,0 +1,115 @@
+.MondstadtBtn {
+    color: rgb(35, 188, 155);
+    border-color: rgb(35, 188, 155);
+}
+
+.MondstadtBtn:hover {
+    background-color: rgb(35, 188, 155);
+    border-color: rgb(35, 188, 155);
+}
+
+.MondstadtBtn:active {
+    background-color: rgb(30, 162, 134) !important;
+    border-color: rgb(30, 162, 134) !important;
+}
+
+.LiyueBtn {
+    color: rgb(203, 180, 68);
+    border-color: rgb(203, 180, 68);
+}
+
+.LiyueBtn:hover{
+    background-color: rgb(203, 180, 68);
+    border-color: rgb(203, 180, 68);
+}
+
+.LiyueBtn:active {
+    background-color: rgb(180, 160, 60) !important;
+    border-color: rgb(180, 160, 60) !important;
+}
+
+.InazumaBtn {
+    color: rgb(114, 35, 188);
+    border-color: rgb(114, 35, 188);
+}
+
+.InazumaBtn:hover{
+    background-color: rgb(114, 35, 188);
+    border-color: rgb(114, 35, 188);
+}
+
+.InazumaBtn:active {
+    background-color: rgb(102, 32, 167) !important;
+    border-color: rgb(102, 32, 167) !important;
+}
+
+.SumeruBtn {
+    color: rgb(95, 212, 32);
+    border-color: rgb(95, 212, 32);
+}
+
+.SumeruBtn:hover {
+    background-color: rgb(95, 212, 32);
+    border-color: rgb(95, 212, 32);
+}
+
+.SumeruBtn:active {
+    background-color: rgb(81, 180, 28) !important;
+    border-color: rgb(81, 180, 28) !important;
+}
+
+.FontaineBtn {
+    color: rgb(22, 180, 228);
+    border-color: rgb(22, 180, 228);
+}
+
+.FontaineBtn:hover {
+    background-color: rgb(22, 180, 228);
+    border-color: rgb(22, 180, 228);
+}
+
+.FontaineBtn:active {
+    background-color: rgb(19, 152, 193) !important;
+    border-color: rgb(19, 152, 193) !important;
+}
+
+.NatlanBtn {
+    color: rgb(213, 45, 45);
+    border-color: rgb(213, 45, 45);
+}
+
+.NatlanBtn:hover {
+    background-color: rgb(213, 45, 45);
+    border-color: rgb(213, 45, 45);
+}
+
+.NatlanBtn:active {
+    background-color: rgb(185, 40, 40) !important;
+    border-color: rgb(185, 40, 40) !important;
+}
+
+.navbar, .navbar .nav-link {
+    color: white !important;
+}
+
+.navbar .nav-link:hover {
+    color: #ccc !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:active, .navbar-toggler:focus {
+    border-color: white !important;
+}
+
+.dropdown-menu {
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+}
